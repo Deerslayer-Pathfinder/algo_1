@@ -3,15 +3,14 @@ import strutils, sequtils
 proc main() =
   # Реализуйте ваш код здесь
   const nMax = 100000
-  type ArrInt = array[0..(nMax-1), int]
   var flag : bool
   flag = false
   echo "Введите n:"
   var n = parseInt(stdin.readline)
-  var nMean : ArrInt
+  var nMean : seq[int]
   echo "Введите очки на фишках:"
-  for i in countup(0, n-1):
-    nMean[i] = parseInt(stdin.readline)
+  let s = stdin.readline
+  nMean = map(s.split, proc(x : string): int=x.parseint)
   echo "Введите k: " 
   let k = parseInt(stdin.readline)
   for j in countup(0, n-1):
@@ -25,3 +24,5 @@ proc main() =
   if flag != true :
     echo "None"  
 main()
+
+let name = stdin.readLine
