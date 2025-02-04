@@ -24,5 +24,3 @@ proc main() =
   if flag != true :
     echo "None"  
 main()
-
-let name = stdin.readLine
